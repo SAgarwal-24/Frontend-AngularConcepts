@@ -1,0 +1,41 @@
+<html>
+
+  user Forms (Reactive Form)
+
+
+<body>
+<!-- using directive 'formGroup' to connect TS form with HTML form-->
+
+
+<div class="container">
+  <form [formGroup] = "myReactiveForm"  (ngSubmit)="onSubmit()"  >
+
+    <div class="form-group">
+        <label for="username"  class="form-label" >Username</label><br>
+        <input class="form-control" type="text" id="username" formControlName="username"><br>
+    </div>
+
+
+    <div class="form-group">
+      <label for="email" class="form-label"  >Email</label><br>
+      <input class="form-control" type="email" id="email" formControlName="email" ><br>
+    </div>
+
+
+    <div class="form-group">
+      <label for="course" class="form-label"  >Course</label><br>
+      <input class="form-control" type="text" id="course" formControlName="course"><br>
+    </div>
+
+<!--    <input type="submit" value="Submit">-->
+
+    <button class="btn btn-primary" type="submit" > Register  </button>
+  </form>
+
+  {{ myReactiveForm.value | json }}
+
+</div>
+
+
+</body>
+</html>

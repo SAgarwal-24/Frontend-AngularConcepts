@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+##My Notes
+
+Adding router module
+1. Import 'AppRoutingModule' in 'app.module.ts'
+2. add 'AppRoutingModule' to  imports[] array  - so that it is part of -> 'angular-dynamicForm-application'
+
+Reduce repeating imports of routing components - by creating array of routing components
+
