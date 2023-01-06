@@ -1,0 +1,44 @@
+
+
+<ng-content > </ng-content>
+
+<div class="container-fluid text-center">
+  title -> {{ title }}
+
+  <div>
+    <button class="btn" (click)="toggleBtn()">Toggle</button>
+  </div>
+
+  <ng-container *ngIf="!showPrimary; else primary " >
+    this is Secondary ng-template
+    <div>
+      <button class="btn btn-secondary">Secondary</button>
+    </div>
+  </ng-container>
+
+</div>
+
+<ng-template #primary>
+  this is primary ng-template
+  <div class="container-fluid text-center">
+    <button class="btn btn-primary">Primary</button>
+  </div>
+</ng-template>
+
+<body>
+<ng-template [ngTemplateOutlet]=
+               "TheGeekTemplate" [ngTemplateOutletContext]="
+                 {
+                  GeeksForGeeks: 'This is GeeksForGeeks coding'
+                 }"
+             #TheGeekTemplate let-GFG="GeeksForGeeks">
+  <div>{{GFG}}</div>
+
+</ng-template>
+
+
+<div *ngFor="let task of tasks; let i=index " >
+  <span>{{task}}</span>
+</div>
+
+</body>

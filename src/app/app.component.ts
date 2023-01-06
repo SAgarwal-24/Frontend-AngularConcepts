@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 // @Component decorator tells the Angular that 'AppComponent' is not a plain class - infact its a component
 export class AppComponent {
   title = 'angular-dynamicForm-app';
-  active = 1;
+  active = 7;
   constructor() {
     setTimeout(() => {
     }, 2000)

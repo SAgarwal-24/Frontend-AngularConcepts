@@ -13,18 +13,62 @@
 <!--    <a routerLink="/userFormComponent" routerLinkActive="active"> Reactive Form </a>-->
 <!--  </nav>-->
 
+ <h5> input decorator : To send data from parent to child in ts file  </h5>
+ <h5> ng-content      : To send data from parent to child in html file</h5>
+
 
   <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
     <li [ngbNavItem]="1">
-      <a ngbNavLink>One</a>
+      <a ngbNavLink>Template Driven Form</a>
       <ng-template ngbNavContent>
         <app-template-driven-form> </app-template-driven-form>
       </ng-template>
     </li>
     <li [ngbNavItem]="2">
-      <a ngbNavLink>Two</a>
+      <a ngbNavLink>Reactive Form</a>
       <ng-template ngbNavContent>
         <app-user-form></app-user-form>
+      </ng-template>
+    </li>
+
+    <li [ngbNavItem]="3">
+      <a ngbNavLink>Pipe Example</a>
+      <ng-template ngbNavContent>
+        <app-pipe-example></app-pipe-example>
+      </ng-template>
+    </li>
+
+    <li [ngbNavItem]="4">
+      <a ngbNavLink>Communication</a>
+      <ng-template ngbNavContent>
+        <app-communication></app-communication>
+      </ng-template>
+    </li>
+
+    <li [ngbNavItem]="5">
+      <a ngbNavLink>Reactive Form Example-1</a>
+      <ng-template ngbNavContent>
+        <app-reactive-form-eg1></app-reactive-form-eg1>
+      </ng-template>
+    </li>
+
+    <li [ngbNavItem]="6">
+      <a ngbNavLink>Postman platform</a>
+      <ng-template ngbNavContent>
+        <app-postman-platform></app-postman-platform>
+      </ng-template>
+    </li>
+
+    <li [ngbNavItem]="7">
+      <a ngbNavLink>Typeahead-example</a>
+      <ng-template ngbNavContent>
+        <app-typeahead-example>
+        <div class="container-fluid">
+          <h5> html from parent to child , lets explore ng-content directive </h5>
+          <h5 text1 > just inject the ng-content directive in child to show the data from parent </h5>
+          <h5 class="dummy1"> parent : app.component.ts </h5>
+        </div>
+        </app-typeahead-example>
       </ng-template>
     </li>
 

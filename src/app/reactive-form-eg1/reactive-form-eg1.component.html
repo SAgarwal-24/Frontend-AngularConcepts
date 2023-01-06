@@ -1,0 +1,82 @@
+<html>
+
+
+
+
+<body>
+<!-- using directive 'formGroup' to connect TS form with HTML form-->
+
+
+<div class="container">
+
+  <div id="form1">
+  <form [formGroup] = "testForm1"  (ngSubmit)="onSubmit()"  >
+
+    <div class="form-group">
+      <label for="username" class="form-label" >Username</label> <br>
+      <input class="form-control" type="text" id="username" formControlName="username" >
+    </div>
+
+    <div formArrayName="skills" *ngFor="let skills of testForm1.controls?.['skills']?.value; let i=index">
+      <ng-container [formGroupName]="i">
+        <input formControlName="key" >
+        <input formControlName="value" >
+      </ng-container>
+    </div>
+    <hr>
+
+    <div formArrayName="skills" *ngFor="let skills of testForm1.get('skills')?.value; let i=index">
+      <ng-container [formGroupName]="i">
+        <input formControlName="key" >
+        <input formControlName="value" >
+      </ng-container>
+    </div>
+
+    <div >
+      <button (click)="addSkills()"> Add </button>
+    </div>
+
+
+
+
+    <!--    <input type="submit" value="Submit">-->
+
+    <button class="btn btn-primary" type="submit" > Register  </button>
+  </form>
+  </div>
+
+  <div id="form2">
+    <form [formGroup] = "testForm2"  (ngSubmit)="onSubmit()"  >
+
+      <div class="form-group">
+        <label for="username" class="form-label" >Username2</label> <br>
+        <input class="form-control" type="text" id="username2" formControlName="username2" >
+      </div>
+
+      <div formArrayName="skills2" *ngFor="let skills of testForm2.controls?.['skills2']?.value; let i=index">
+        <ng-container [formGroupName]="i">
+          <input formControlName="key2" >
+          <input formControlName="value2" >
+        </ng-container>
+      </div>
+
+
+      <div >
+        <button (click)="addSkills2()"> Add </button>
+      </div>
+
+
+
+
+      <!--    <input type="submit" value="Submit">-->
+
+      <button class="btn btn-primary" type="submit" > Register  </button>
+    </form>
+  </div>
+
+</div>
+
+
+</body>
+</html>
+<pre> {{ testForm1.value | json }}</pre>

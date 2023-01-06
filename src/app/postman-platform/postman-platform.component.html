@@ -1,0 +1,98 @@
+
+<html>
+<body>
+<h1>   </h1>
+</body>
+
+
+<!--  Navigating through Router -->
+<!--  <nav>-->
+<!--    <a routerLink="/templateDrivenForms"  routerLinkActive="active"> Template Driven Forms</a>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <a routerLink="/userFormComponent" routerLinkActive="active"> Reactive Form </a>-->
+<!--  </nav>-->
+
+<div id="form1">
+  <form [formGroup] = "apiForm"  (ngSubmit)="onSubmit()"  >
+
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+
+
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Body Form</a>
+      <ng-template ngbNavContent>
+        <div class="container">
+
+          Body Form
+          <div formGroupName="paramsForm">
+              <div formArrayName="queryParams" *ngFor="let queryParameters of queryParamsFormArr.controls; let i=index">
+                <ng-container [formGroupName]="i">
+                  <input formControlName="key" >
+                  <input formControlName="value" >
+                </ng-container>
+              </div>
+
+              <div >
+                <button (click)="addQueryParams()"> Add </button>
+              </div>
+
+<!--              <button class="btn btn-primary" type="submit" > Register  </button>-->
+
+          </div>
+
+
+        </div>
+      </ng-template>
+
+
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Headers Form</a>
+      <ng-template ngbNavContent>
+        Headers  Form
+        <div formGroupName="headersForm">
+          <div formArrayName="headersInfo" *ngFor="let header of headersFormArr.controls; let i=index">
+            <ng-container [formGroupName]="i">
+              <input formControlName="key" >
+              <input formControlName="value" >
+            </ng-container>
+          </div>
+
+          <div >
+            <button (click)="addNewHeader()"> Add </button>
+          </div>
+
+<!--          <button class="btn btn-primary" type="submit" > Register  </button>-->
+
+        </div>
+      </ng-template>
+    </li>
+
+    <li [ngbNavItem]="3">
+      <a ngbNavLink>Pipe Example</a>
+      <ng-template ngbNavContent>
+        <app-pipe-example></app-pipe-example>
+      </ng-template>
+    </li>
+
+
+
+  </ul>
+
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+    <button class="btn btn-primary" type="submit" > Register  </button>
+  </form>
+</div>
+
+
+
+<pre> {{ apiForm.value | json }}</pre>
+
+</html>
+<!--<router-outlet></router-outlet>-->
+
+
+

@@ -28,8 +28,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
             "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.js"]
           },
@@ -104,5 +103,8 @@
       }
     }
   },
-  "defaultProject": "angular-dynamicForm-app"
+  "defaultProject": "angular-dynamicForm-app",
+  "cli": {
+    "analytics": "ad07c939-9c99-4782-a07b-484fb182a163"
+  }
 }

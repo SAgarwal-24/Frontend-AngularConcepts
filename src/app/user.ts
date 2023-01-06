@@ -1,4 +1,4 @@
-export class User {
+export class User {   //This is user Model
 
   constructor(
     public name : string,

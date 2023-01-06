@@ -1,0 +1,17 @@
+<!--<div style="border: solid 2px #66CDAA; height: auto;">-->
+<!--  <h2>Child Component</h2>-->
+<!--  <span>Hobbies:</span>-->
+<!--  <br>-->
+<!--  <div *ngFor="let hobby of hobbies">-->
+<!--    {{ hobby }} <br>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div style="border: solid 2px #bce4f7; height: auto; padding:10px">
+  <h2>Child Component</h2>
+  <h5>Choose Shipping Address Type</h5>
+  <select [(ngModel)]="selectedAddressType" (change)="onAddressTypeChange()">
+    <option value="Permanent">Permanent</option>
+    <option value="Temporary">Temporary</option>
+  </select>
+</div>

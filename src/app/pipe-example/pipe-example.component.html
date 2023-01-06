@@ -1,0 +1,36 @@
+
+<html>
+
+<body>
+  <div>
+
+    Pipe transforms the data
+    By Default pipes are pure
+
+    today: {{ today }} <br>
+    <p>Today is {{today | date}}</p>
+    <p>Or if you prefer, {{today | date:'fullDate'}}</p>
+    <p>The time is {{today | date:'h:mm a z'}}</p>
+   <hr/>
+
+    Date : {{ dateToday }} <br>
+
+    <h3>(using inbuilt pipe) </h3>
+
+    Date Pipe  : {{ dateToday | uppercase }} <br>
+    Date Pipe  : {{ dateToday | lowercase }} <br>
+    Date Pipe  : {{ dateToday | date | uppercase }} <br>
+    Date Pipe  : {{ dateToday | date:'short' | lowercase }} <br>
+
+    name : {{name | uppercase}} <br>
+    name : {{name | slice:3}} <br>
+    name : {{name | slice:4}}
+
+    <hr/>
+    Reverse of "Angular" is {{"Angular" | customPipeExample }}
+
+
+  </div>
+</body>
+
+</html>
